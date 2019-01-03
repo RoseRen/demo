@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>点标记</title>
+    <link rel="stylesheet" href="css/map.css"/>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=e74ec23e322859dd9cfa35024a1bd77b"></script>
+</head>
+<body>
+<div id="container"></div>
+<div class="button" id="addMarker"></div>
+<script>
+    var marker, map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [116.33859,39.974656],
+        zoom: 13
+    });
+    
+    window.onload = function(){
+        addMarker();
+
+        map.plugin(["AMap.ToolBar"], function() {
+            map.addControl(new AMap.ToolBar());
+        });
+        if(location.href.indexOf('&guide=1')!==-1){
+            map.setStatus({scrollWheel:false})
+        }
+    }
+    // 实例化点标记
+    function addMarker() {
+        if (marker) {
+            return;
+        }
+        marker = new AMap.Marker({
+            icon: "images/map.png",
+            position: [116.33859,39.974656]
+        });
+        marker.setMap(map);
+    }
+
+
+</script>
+
+
+</body>
+</html>

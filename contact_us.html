@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> 
+    <title>联系我们</title>
+    <link rel="icon" sizes="16x16" href="images/favicon.ico">
+    <!--Global css-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/wow/css/animate.css">
+    <link rel="stylesheet" href="vendors/iCheck/css/all.css">
+    <!---Custom css-->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/map.css"/>
+</head>
+<body>
+
+<!---Preloader-->
+<div class="preloader" style="position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:100000;
+    backface-visibility: hidden;
+    background: #ffffff;">
+    <div style=" width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: center;
+    margin:-25px 0 0 -25px;">
+        <img src="images/loader.gif" alt="loading...">
+    </div>
+</div>
+<!--Preloader end-->
+<div class="tp-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-7 col-md-6">
+                    <!--<a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>-->
+                </div>
+                <div class="col-xs-5 col-md-6 text-right">
+                    <span class="signin" data-toggle="modal" data-target="#myModal">
+                        <!--<span class="hidden-xs">Sign In</span>-->
+                        <img src="images/phone.png" class="hidden-xs" style="width: 16px; height: 14px;" />
+                        <i class="fa fa-sign-in visible-xs-block" aria-hidden="true"></i>
+                    </span>
+                    <span class="register" data-toggle="modal" data-target="#myModal">
+                        <span class="hidden-xs">010-58733632</span>
+                        <i class="fa fa-user-plus visible-xs-block" aria-hidden="true"></i>
+                    </span>
+                </div>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myMegamenu"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/3.png" class="img-responsive" alt="company-logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myMegamenu">
+                <ul class="nav navbar-nav">
+                    <li class="list2"><a href="index.html" class="hvr-underline-from-center">首页</a></li>
+                    <li class="list2"><a href="services.html" class="hvr-underline-from-center">法律服务</a></li>
+                    <li class="list2"><a href="about_us.html" class="hvr-underline-from-center">公司动态</a></li>
+                    <li class="list2"><a href="blog.html" class="hvr-underline-from-center">动态资讯</a></li>
+                    <li class="list2"><a href="careers.html" class="hvr-underline-from-center">招贤纳士</a></li>
+                    <li class="list2"><a href="contact_us.html" class="hvr-underline-from-center">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--Login And Register Modal
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <br>
+            <div class="bs-example bs-example-tabs">
+                <ul id="myTab" class="nav nav-tabs ">
+                    <li id="signin_tab" class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+                    <li id="reg_tab"><a href="#signup" data-toggle="tab">Register</a></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div id="myTabContent" class="tab-content">
+                    <div class=" signin tab-pane fade active in" id="signin">
+                        <form class="form-horizontal" action="contact.php" method="post">
+                            <fieldset>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="userid"><span class="glyphicon glyphicon-user text-primary"></span> User Id :</label>
+                                    <div class="controls">
+                                        <input id="userid" name="userid" type="text" class="form-control input-medium" placeholder="user Id" required>
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="passwordinput"><span class="glyphicon glyphicon-eye-open text-primary"></span> Password :</label>
+                                    <div class="controls">
+                                        <input type="password" id="passwordinput" name="passwordinput" class="form-control input-medium" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="blue">Remember me</label>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls section-top-10">
+                                        <button id="signin_btn" name="signin" class="btn btn-success form-control">Sign In</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade signup" id="signup">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <div class="control-group section-top-10">
+                                    <label for="user"><span class="glyphicon glyphicon-user text-primary"></span> Name
+                                        :</label>
+                                    <div class="controls">
+                                        <input id="user" name="userid" class="form-control input-large" type="text" placeholder="Name" required="">
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="Email_id"><span class="glyphicon glyphicon-envelope text-primary"></span> Email :</label>
+                                    <div class="controls">
+                                        <input id="Email_id" name="Email" class="form-control input-large" type="email" placeholder="abcdef@xyz.com" required>
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label for="password"><span class="glyphicon glyphicon-eye-open text-primary"></span>Password :</label>
+                                    <div class="controls">
+                                        <input id="password" name="password" class="form-control input-large" type="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="reenterpassword"><span class="glyphicon glyphicon-repeat text-primary"></span> Re-Enter Password :</label>
+                                    <div class="controls">
+                                        <input id="reenterpassword" class="form-control input-large" name="reenterpassword" type="password" placeholder="Re Enter Password" required="">
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="confirmsignup"></label>
+                                    <div class="controls">
+                                        <button id="confirmsignup" name="confirmsignup" class="btn btn-success form-control">Sign Up</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+Login And Register Modal-->
+<!--Body Section Start-->
+<section class="contact_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 m-t-50">
+                <h2 class="underline heading">联系我们</h2>
+                <p class="text-center">优律库是威智（北京）咨询有限公司的自有品牌，专注于提供优质的法律顾问服务。</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="row contact_map_gap">
+                    <div class="col-xs-12 text-justify section-top-30">
+                        <h4 class="heading_left">优律库简介</h4>
+                    </div>
+                    <div class="col-xs-12 section-top-10">
+                        <p>优律库为企业提供法律风险防控、法律事务处理、纠纷和诉讼管理、专业培训等多方面的一站式服务，致力于帮助企业降低法务管理成本和业务运作风险，助理企业实现健康高效运转。</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 contact_mobile_number">
+                        <h5>联系优律库</h5>
+                        <p>电话 : <a href="#">010-58733632</a> <br/>手机 : <a href="#">15210833897</a></p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <h5>优律库地址</h5>
+                        <p>北京市海淀区知春路<br/>盈都大厦C座4单元16B，优律库</p>
+                    </div>
+                    <div class="col-sm-12 col-lg-4 contact_mobile_number a:focus">
+                        <h5>优律库邮箱</h5>
+                        <p><a href="#">youlvku@weizhi<br/>lawyers.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 section-top-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="row contact_border">
+                    <div class="contact_form">
+                        <form class="form" action="contact.php" method="post">
+                            <div class="col-xs-12"><h4 class="heading_left">联系我们</h4></div>
+                            <div class="form-group col-xs-12 section-top-10">
+                                <input type="text" class="form-control" name="name" placeholder="名字 *" required>
+                            </div>
+                            <div class="clearfix visible-sm-block visible-md-block visible-xs-block"></div>
+                            <div class="form-group col-sm-6 col-xs-12">
+                                <input type="email" class="form-control" name="email" placeholder="邮箱 *" required>
+                            </div>
+                            <div class="form-group col-sm-6 col-xs-12">
+                                <input type="text" class="form-control" name="number" pattern="[0-9]{10}" placeholder="电话 *" required>
+                            </div>
+                            <div class="clearfix visible-sm-block visible-md-block visible-xs-block"></div>
+                            <div class="col-xs-12 form-group">
+                                <textarea class="form-control" rows="4" name="message" placeholder="备注 *" required></textarea>
+                            </div>
+                            <div class="clearfix visible-sm-block visible-md-block visible-xs-block"></div>
+                            <div class="col-md-12 text-center section-bottom-15">
+                                <button type="submit" class="btn btn-success">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row section-top-25">
+            <div class="col-xs-12">
+                <div class="map" id="_map"></div>
+                <div class="button" id="addMarker"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---Body Section End-->
+<!--Footer Start-->
+<!--Footer Caret Shape-->
+<div class="shape section-top-50"></div>
+<!--Footer Caret Shape end-->
+<section class="footer_one">
+        <footer>
+            <div class="container">
+                <div class="row section-top-40">
+                    <div class="col-md-3 col-sm-6 section-top-25">
+                        <h4 class="text-white">优律库</h4>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p class="footer_text_color">优律库是威智（北京）咨询有限公司的自有品牌，专注于提供优质的法律顾问服务。</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <span class="foot_icon">
+                                    <a href="#"><i class="fa fa-facebook section-top-10 footer_social_icons" aria-hidden="true"><img style="width: 20px; height: 20px;" src="images/qq.png"></i></a>
+                                    <a href="#"><i class="fa fa-twitter section-top-10 footer_social_icons" aria-hidden="true"><img style="width: 20px; height: 20px;" src="images/wechat.png"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin section-top-10 footer_social_icons" aria-hidden="true"><img style="width: 20px; height: 20px;" src="images/phone2.png"></i></a>
+                                    <a href="#"><i class="fa fa-instagram section-top-10 footer_social_icons" aria-hidden="true"><img style="width: 20px; height: 20px;" src="images/email.png"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3  col-lg-3 col-sm-6 section-top-25">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4 class="text-white">动态资讯</h4>
+                                <hr/>
+                            </div>
+                            <div class="footer_contact">
+                                <div class="col-md-1  col-xs-1">
+                                    <a href="blog.html">
+                                        <i class="fa fa-caret-right div_hover1" aria-hidden="true"><img src="images/arrow.png"></i>
+                                    </a>
+                                </div>
+                                <div class="col-md-10  col-xs-10">
+                                    <a href="blog.html" class="div_hover2">中小企业如何防范法律风险</a>
+                                    <br/>
+                                    <span class="footer_text_color">2018.01.28</span>
+                                </div>
+                            </div>
+                            <div class="clearfix visible-xs-block visible-sm-block visible-lg-block visible-md-block"></div>
+                            <div class="footer_contact">
+                                <div class="col-md-1  col-xs-1 section-top-10">
+                                    <a href="blog.html"><i class="fa fa-caret-right div_hover1" aria-hidden="true"><img src="images/arrow.png"></i></a>
+                                </div>
+                                <div class="col-md-10  col-xs-10 section-top-10">
+                                    <a href="blog.html" class="div_hover2">如何让企业快速成长</a><br/>
+                                    <span class="footer_text_color">2018.03.30</span>
+                                </div>
+                            </div>
+                            <div class="clearfix visible-xs-block visible-sm-block visible-lg-block visible-md-block"></div>
+                            <div class="footer_contact">
+                                <div class="col-md-1  col-xs-1 section-top-10">
+                                    <a href="blog.html"><i class="fa fa-caret-right div_hover1" aria-hidden="true"><img src="images/arrow.png"></i></a>
+                                </div>
+                                <div class="col-md-10  col-xs-10 section-top-10">
+                                    <a href="blog.html" class="div_hover2">中小企业运营法律风险</a><br/>
+                                    <span class="footer_text_color">2018.04.19</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 section-top-25">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4 class="text-white">Dribbble</h4>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="shots"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 section-top-25">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4 class="text-white">Twitter Feed</h4>
+                                <hr/>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="tweet">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+<!---Footer section End-->
+<!--Copy rights-->
+<section class="copy-rights">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 section-top-15">
+                <p class="footer_text_color">
+                    <a href="index.html">首页</a> &nbsp;<a href="services.html">法律服务</a> &nbsp; <a href="about_us.html">关于我们</a> &nbsp;<a href="careers.html">招贤纳士</a>
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 text-right section-top-15">
+                <p class="footer_text_color">&copy;2018  威智（北京）咨询有限公司  版权所有 丨 京ICP备16022103号</p>
+            </div>
+        </div>
+        <a href="#" id="return-to-top"><img src="images/backto.png" alt="image-missing"></a>
+    </div>
+</section>
+<!--Copy rights End-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="vendors/gmap3/js/gmap3.min.js"></script>
+<script src="vendors/wow/js/wow.min.js"></script>
+<!---<script src="https://ditu.google.cn/maps/api/js"></script>-->
+<script src="vendors/iCheck/js/icheck.js"></script>
+<script src="vendors/jribbble/js/jribbble.min.js"></script>
+<!--page Level Js-->
+<script src="js/custom.js"></script>
+<!--map-->
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=e74ec23e322859dd9cfa35024a1bd77b"></script> 
+
+<script>
+    //输入优律库经纬坐标
+    var marker, map = new AMap.Map("_map", {
+        resizeEnable: true,
+        center: [116.33859,39.974656],
+        zoom: 13
+    });
+    
+    //随页面加载显示坐标点和放大缩小
+    window.onload = function(){
+        addMarker();
+
+        map.plugin(["AMap.ToolBar"], function() {
+            map.addControl(new AMap.ToolBar());
+        });
+        if(location.href.indexOf('&guide=1')!==-1){
+            map.setStatus({scrollWheel:false})
+        }
+    }
+
+    // 实例化点标记
+    function addMarker() {
+        if (marker) {
+            return;
+        }
+        marker = new AMap.Marker({
+            icon: "images/map.png",
+            position: [116.33859,39.974656]
+        });
+        marker.setMap(map);
+    }
+</script>
+
+</body>
+</html>
